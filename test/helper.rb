@@ -1,3 +1,8 @@
+require 'simplecov'
+SimpleCov.start do
+  add_filter "/test/"
+end
+
 require 'rubygems'
 require 'bundler'
 begin
@@ -12,7 +17,7 @@ require 'shoulda'
 
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 $LOAD_PATH.unshift(File.dirname(__FILE__))
-require 'easy-log4r'
+require 'easy_log4r'
 
 class Test::Unit::TestCase
 end

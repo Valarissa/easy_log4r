@@ -1,6 +1,18 @@
 = easy-log4r
 
-Description goes here.
+easy-log4r is a quick and simple way to start using Log4r fast. It quickly and easily creates a default logger, as well as class and instance functions that can be used to access it. In addition, it also provides a simple way to disable logging, for whatever reason, without needing to actually remove or comment out the logging code you, hopefully, peppered through your code.
+
+To get started simply `include EasyLog4r::EasyLogger` after `require easy-log4r` in your class and you're good to go!
+
+To disable logging you can `include EasyLog4r::NullLogger`. You don't need to remove the EasyLogger you include to start logging, but you can if you want to.
+
+The default logger is created using the base class's name, so if you want to customize a particular logger's outputters using an XML or YAML file, feel free to do so using the normal methods, remembering to give the logger the class's name. (ex: 'MyClass')
+
+That's it! Quick, simple, easy logging using log4r.
+
+== Upcoming updates
+
+* Ability to utilize customized Outputters and Formatters as defaults for even easier customized logging.
 
 == Contributing to easy-log4r
  
