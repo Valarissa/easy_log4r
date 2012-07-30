@@ -15,7 +15,7 @@ require 'jeweler'
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
   gem.name = "easy_log4r"
-  gem.homepage = "http://github.com/valarissa/easy-log4r"
+  gem.homepage = "http://github.com/valarissa/easy_log4r"
   gem.license = "MIT"
   gem.summary = %Q{Easy logging using Log4r}
   gem.description = %Q{Quick, simple, easy logging with log4r that can easily be toggled}

@@ -19,13 +19,22 @@ Gem::Specification.new do |s|
   s.files = [
     ".document",
     "Gemfile",
+    "Gemfile.lock",
     "LICENSE.txt",
     "README.rdoc",
     "Rakefile",
     "VERSION",
-    "test/helper.rb"
+    "easy_log4r.gemspec",
+    "lib/easy_log4r.rb",
+    "lib/easy_log4r/easy_logger.rb",
+    "lib/easy_log4r/logger.rb",
+    "lib/easy_log4r/null_logger.rb",
+    "test/helper.rb",
+    "test/test_easy_logger.rb",
+    "test/test_logger.rb",
+    "test/test_null_logger.rb"
   ]
-  s.homepage = "http://github.com/valarissa/easy-log4r"
+  s.homepage = "http://github.com/valarissa/easy_log4r"
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
   s.rubygems_version = "1.8.24"
