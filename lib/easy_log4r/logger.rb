@@ -10,7 +10,7 @@ class EasyLog4r::Logger
   def self.add_logger(base, logger)
     base.class_variable_set(:@@log4r, logger)
     base.class_eval do 
-      def log4r; class_variable_get(:@@log4r); end
+      def log4r; self.class.log4r; end
       def self.log4r; class_variable_get(:@@log4r); end
     end
   end
