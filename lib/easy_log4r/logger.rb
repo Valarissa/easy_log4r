@@ -31,21 +31,20 @@ class EasyLog4r::Logger
   def self.default_outputters
     return @outputters if @outputters
     @outputters = []
-    formatter = default_formatter
-
-    if out = Log4r::Outputter['formatted_stdout']
-      @outputters << out
-    else
-      @outputters << Log4r::StdoutOutputter.new('formatted_stdout', :formatter => formatter)
-    end
-
-    if out = Log4r::Outputter['formatted_stderr']
-      @outputters << out
-    else
-      @outputters << Log4r::StderrOutputter.new('formatted_stderr', :formatter => formatter)
-    end
+    @outputters << default_outputter('formatted_stdout', StdoutOutputter)
+    @outputters << default_outputter('formatter_stderr', StderrOutputter)
 
     return @outputters
+  end
+
+  ##
+  # Takes a name and Logger class and gives back a predefined logger, or a new instance of the given Log4r:: class
+  def self.default_outputter(name, clas)
+    clas = Log4r.instance_eval{ clas }
+    out = Log4r::Outputter[name]
+    out = clas.new(name, :formatter => default_formatter) unless out
+
+    return out
   end
 
   ##
