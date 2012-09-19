@@ -3,6 +3,9 @@
 #
 class EasyLog4r::Logger
   require 'log4r'
+  require File.expand_path('../../log4r/outputter', __FILE__)
+
+
   include Log4r
 
   ##
@@ -30,9 +33,12 @@ class EasyLog4r::Logger
   # Those outputters are a Log4r::StdoutOutputter and a Log4r::StderrOutputter, both of which have a default Log4r::Formatter
   def self.default_outputters
     return @outputters if @outputters
+
     @outputters = []
     @outputters << default_outputter('formatted_stdout', StdoutOutputter)
     @outputters << default_outputter('formatter_stderr', StderrOutputter)
+    @outputters << configured_default_outputters
+    @outputters.flatten!
 
     return @outputters
   end
@@ -45,6 +51,12 @@ class EasyLog4r::Logger
     out = clas.new(name, :formatter => default_formatter) unless out
 
     return out
+  end
+
+  ##
+  # Gathers all Log4r::Outputters defined in the user defined configuration file.
+  def self.configured_default_outputters
+    Log4r::Outputter.default_outputters
   end
 
   ##

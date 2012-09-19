@@ -10,4 +10,7 @@ module EasyLog4r
   require 'easy_log4r/logger'
   require 'easy_log4r/easy_logger'
   require 'easy_log4r/null_logger'
+  require 'log4r/outputter'
+  require 'log4r/configurator'
+  require 'log4r/yamlconfigurator'
 end
