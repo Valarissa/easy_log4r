@@ -2,17 +2,34 @@
 
 easy-log4r is a quick and simple way to start using Log4r fast. It quickly and easily creates a default logger, as well as class and instance functions that can be used to access it. In addition, it also provides a simple way to disable logging, for whatever reason, without needing to actually remove or comment out the logging code you, hopefully, peppered through your code.
 
-To get started simply `include EasyLog4r::EasyLogger` after `require easy-log4r` in your class and you're good to go!
+To get started simply put the following into your class and you're good to go! 
 
-To disable logging you can `include EasyLog4r::NullLogger`. You don't need to remove the EasyLogger you include to start logging, but you can if you want to.
+```ruby
+  require 'easy-log4r'
+  include EasyLog4r::EasyLogger
+```
+
+This gives you two default outputs, one to stdout for all levels of logging, and one to stderr for the error and fatal levels of logging.
+
+To disable logging you can ```include EasyLog4r::NullLogger```. You don't need to remove the EasyLogger you include to start logging, but you can if you want to.
 
 The default logger is created using the base class's name, so if you want to customize a particular logger's outputters using an XML or YAML file, feel free to do so using the normal methods, remembering to give the logger the class's name. (ex: 'MyClass')
 
 That's it! Quick, simple, easy logging using log4r.
 
-== Upcoming updates
+== New Features
 
-* Ability to utilize customized Outputters and Formatters as defaults for even easier customized logging.
+=== 0.1.0
+
+You can now customize what outputters are used with easy_log4r! *Excitement!*
+
+To do so, you must:
+
+1. Use whichever method of configuration you prefer, xml or yaml, and you add a ```default``` attribute to the given outputter.
+2. Include ```require 'easy_log4r'``` before you parse the configuration file. (This is so the monkey patches to Log4r's base classes can take effect)
+3. Parse the configuration file! (You're done!)
+
+If you have no clue how to use a configuration file to edit Log4r, head over to https://github.com/Valarissa/easy_log4r/wiki/Log4r-Yaml-Configuration
 
 == Contributing to easy-log4r
  

@@ -3,8 +3,6 @@
 #
 class EasyLog4r::Logger
   require 'log4r'
-  require File.expand_path('../../log4r/outputter', __FILE__)
-
 
   include Log4r
 
@@ -35,9 +33,8 @@ class EasyLog4r::Logger
     return @outputters if @outputters
 
     @outputters = []
-    @outputters << default_outputter('formatted_stdout', StdoutOutputter)
-    @outputters << default_outputter('formatter_stderr', StderrOutputter)
     @outputters << configured_default_outputters
+    @outputters << standard_outputters if @outputters.empty?
     @outputters.flatten!
 
     return @outputters
@@ -57,6 +54,14 @@ class EasyLog4r::Logger
   # Gathers all Log4r::Outputters defined in the user defined configuration file.
   def self.configured_default_outputters
     Log4r::Outputter.default_outputters
+  end
+
+  ##
+  # Defines two standard outputters, one which prints to stdout at all levels, and one which prints to stderr for error and fatal levels.
+  def self.standard_outputters
+    @outputters << default_outputter('formatted_stdout', StdoutOutputter)
+    @outputters << default_outputter('formatted_stderr', StderrOutputter)
+    Log4r::Outputter['formatted_stderr'].level = :error
   end
 
   ##
