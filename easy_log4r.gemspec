@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "easy_log4r"
-  s.version = "0.0.1"
+  s.version = "0.1.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Lauren Voswinkel"]
-  s.date = "2012-07-30"
+  s.date = "2012-09-20"
   s.description = "Quick, simple, easy logging with log4r that can easily be toggled"
   s.email = "lvoswink@gmail.com"
   s.extra_rdoc_files = [
@@ -18,6 +18,7 @@ Gem::Specification.new do |s|
   ]
   s.files = [
     ".document",
+    ".rvmrc",
     "Gemfile",
     "Gemfile.lock",
     "LICENSE.txt",
@@ -26,9 +27,12 @@ Gem::Specification.new do |s|
     "VERSION",
     "easy_log4r.gemspec",
     "lib/easy_log4r.rb",
+    "lib/easy_log4r/configurator.rb",
     "lib/easy_log4r/easy_logger.rb",
     "lib/easy_log4r/logger.rb",
     "lib/easy_log4r/null_logger.rb",
+    "lib/easy_log4r/outputter.rb",
+    "lib/easy_log4r/yamlconfigurator.rb",
     "test/helper.rb",
     "test/test_easy_logger.rb",
     "test/test_logger.rb",
@@ -37,7 +41,7 @@ Gem::Specification.new do |s|
   s.homepage = "http://github.com/valarissa/easy_log4r"
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
-  s.rubygems_version = "1.8.24"
+  s.rubygems_version = "1.8.23"
   s.summary = "Easy logging using Log4r"
 
   if s.respond_to? :specification_version then
