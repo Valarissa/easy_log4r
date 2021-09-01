@@ -51,14 +51,14 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<log4r>, [">= 0"])
       s.add_development_dependency(%q<shoulda>, [">= 0"])
       s.add_development_dependency(%q<shoulda-context>, [">= 0"])
-      s.add_development_dependency(%q<rdoc>, ["~> 3.12"])
+      s.add_development_dependency(%q<rdoc>, "~> 6.3")
       s.add_development_dependency(%q<jeweler>, ["~> 1.8.4"])
       s.add_development_dependency(%q<simplecov>, [">= 0"])
     else
       s.add_dependency(%q<log4r>, [">= 0"])
       s.add_dependency(%q<shoulda>, [">= 0"])
       s.add_dependency(%q<shoulda-context>, [">= 0"])
-      s.add_dependency(%q<rdoc>, ["~> 3.12"])
+      s.add_dependency(%q<rdoc>, "~> 6.3")
       s.add_dependency(%q<jeweler>, ["~> 1.8.4"])
       s.add_dependency(%q<simplecov>, [">= 0"])
     end
@@ -66,7 +66,7 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<log4r>, [">= 0"])
     s.add_dependency(%q<shoulda>, [">= 0"])
     s.add_dependency(%q<shoulda-context>, [">= 0"])
-    s.add_dependency(%q<rdoc>, ["~> 3.12"])
+    s.add_dependency(%q<rdoc>, "~> 6.3")
     s.add_dependency(%q<jeweler>, ["~> 1.8.4"])
     s.add_dependency(%q<simplecov>, [">= 0"])
   end
