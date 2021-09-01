@@ -11,7 +11,7 @@ gem "log4r", ">= 0"
 group :development do
   gem "shoulda", ">= 0"
   gem "shoulda-context", ">= 0"
-  gem "rdoc", "~> 3.12"
+  gem "rdoc", "~> 6.3"
   gem "jeweler", "~> 1.8.4"
   gem 'simplecov', ">= 0"
 end
